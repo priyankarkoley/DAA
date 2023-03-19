@@ -8,7 +8,7 @@ void maxmin(int i, int j)
     int max1, min1, mid;
     if(i==j)
         min=max=a[i];
-    else if (i==15j-1)
+    else if (i==j-1)
     {
         if(a[i] <a[j])
         {
