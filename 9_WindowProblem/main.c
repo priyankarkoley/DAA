@@ -1,3 +1,4 @@
+//CHOOSE K ARRAY ELEMENTS SUCH THAT DIFFERENCE OF MAXIMUM AND MINIMUM IS MINIMIZED
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -61,15 +62,15 @@ void Print(int arr[], int length)
         printf("%d\t", arr[i]);
     }
 }
-int Window(int arr[], int length, int key)
+int Window(int arr[], int length, int k)
 {
     int MinDiff, i, j, dif;
     MinDiff = arr[length - 1] - arr[0];
 
-    for(i = 0; i+key-1<length; i++)
+    for(i = 0; i+k-1<length; i++)
     {
-        j = i+key-1;
-        dif = arr[i+key-1] - arr[i];
+        j = i+k-1;
+        dif = arr[i+k-1] - arr[i];
         if (dif < MinDiff)
             MinDiff = dif;
     }
@@ -78,19 +79,19 @@ int Window(int arr[], int length, int key)
 
 int main()
 {
-    int i, length, Mindifference, key;
+    int i, length, Mindifference, k;
 
     printf("\nEnter the length of the array: ");
     scanf("%d", &length);
     int arr[length];
     for(i=0; i<length; i++)
         arr[i] = rand();
-    printf("\nEnter the value of key: ");
-    scanf("%d", &key);
+    printf("\nEnter the value of k: ");
+    scanf("%d", &k);
     printf("\nThe given array: ");
     Print(arr, length);
     MergeSort(arr, 0, length - 1);
-    Mindifference = Window(arr, length, key);
+    Mindifference = Window(arr, length, k);
     printf("\nThe minimum difference is: %d \n", Mindifference);
     return 0;
 }
