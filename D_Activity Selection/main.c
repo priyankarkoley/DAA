@@ -1,8 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// A job has a start time, finish time and profit.
+struct Activitiy {
+	int start, finish;
+};
+
+void printMaxActivities(Activitiy arr[], int n)
+{
+
+	cout << "Following activities are selected :\n";
+	int i = 0;
+	cout << "(" << arr[i].start << ", " << arr[i].finish<< ")";
+	for (int j = 1; j < n; j++) {
+		if (arr[j].start >= arr[i].finish) {
+			cout << ", (" << arr[j].start << ", "
+				<< arr[j].finish << ")";
+			i = j;
+		}
+	}
+}
+
 int main()
 {
-    printf("Hello world!\n");
-    return 0;
+	Activitiy arr[] = { { 5, 9 }, { 1, 2 }, { 3, 4 },
+						{ 0, 6 }, { 5, 7 }, { 8, 9 } };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	printMaxActivities(arr, n);
+	return 0;
 }
