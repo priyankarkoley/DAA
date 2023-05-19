@@ -1,5 +1,7 @@
 # OUTPUT IMAGE
 
+![dijkstra](output.png)
+
 <p float="left">
-<img src="output.png" alt="ScreenShot 1 of the app"/>
+<img src="output.png" alt="dijkstra" width='100'/>
 </p>
