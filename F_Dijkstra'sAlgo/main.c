@@ -4,7 +4,27 @@
 
 void dijkstra(int n, int s, int cost[10][10], int dist[10])
 {
-
+    int i, v=s, count, min, visited[10];
+    for(i=1;i<=n;i++){
+        visited[i]=0;
+        dist[i]=cost[s][i];
+    }
+    visited[s]=1;
+    dist[s]=0;
+    for(count=1; count<=n; count++){
+        min = INT_MAX;
+        for(i=1;i<=n;i++){
+            if(dist[i]<min&&visited[i]==0){
+                min = dist[i];
+                v = i;
+            }
+            visited[v] = 1;
+        }
+        for(i=1;i<=n;i++){
+            if(dist[i]>dist[v]+cost[v][i])
+                dist[i]=dist[v]+cost[v][i];
+        }
+    }
 }
 
 int main()
@@ -13,6 +33,7 @@ int main()
     printf("Enter the number of nodes: ");
     scanf("%d", &n);
     for(i=1;i<=n;i++){
+        printf("Enter %d th row: ", i);
         for(j=1;j<=n;j++){
             scanf("%d",&cost[i][j]);
             if(cost[i][j]==0)cost[i][j]=INT_MAX;
@@ -23,5 +44,5 @@ int main()
     dijkstra(n,s,cost,dist);
     printf("The shortest paths are: ");
     for(i=1;i<=n;i++)
-        if(s!=i)printf("%d ---> %d = %d",s,i,dist[i]);
+        if(s!=i)printf("\n%d ---> %d = %d",s,i,dist[i]);
 }
