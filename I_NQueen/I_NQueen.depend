@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1684489398 source:d:\dsa\daa\i_nqueen\main.c
+	<stdio.h>
+	<stdlib.h>
+
