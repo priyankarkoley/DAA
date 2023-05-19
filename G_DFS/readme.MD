@@ -1,6 +1,6 @@
 # OUTPUT IMAGE
 
-<p>
+<p float="left">
   <h2>Image of the Graph</h2>
   <img src="https://github.com/priyankarkoley/DAA/assets/103280360/1b68c425-6d3f-4433-b4cf-d8559cb4cfe4" alt="graph"/>
 
