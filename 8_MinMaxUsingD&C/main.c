@@ -17,8 +17,8 @@ void maxmin(int i, int j)
         }
         else
         {
-            min=a[i];
-            max=a[j];
+            min=a[j];
+            max=a[i];
         }
     }
     else
