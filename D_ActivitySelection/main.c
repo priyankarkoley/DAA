@@ -18,7 +18,7 @@ void printMaxActivities(Act givenActs[], int n)
             }
         }
     }
-	printf("Following activities are selected :\n");
+    printf("Following activities are selected :\n");
 	i=0;
 	printf("(%d, %d)", givenActs[i].start, givenActs[i].finish);
 	for (j = 1; j < n; j++)
