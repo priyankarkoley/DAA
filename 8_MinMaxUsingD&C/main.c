@@ -24,7 +24,7 @@ void maxmin(int i, int j)
     else
     {
         mid = (i+j)/2;
-        maxmin (0,mid);
+        maxmin (i,mid);
         max1 = max;
         min1 = min;
         maxmin(mid+1,j);
